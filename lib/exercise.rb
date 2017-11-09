@@ -34,16 +34,13 @@ def substitutions_num(arr1, arr2)
     to_substitute = find_depth(arr1).map { |n| 2**n }
     strings = to_single_nest(arr1)
     strings2 = to_single_nest(arr2)
-    # puts strings.length
-    # puts strings.inspect
     strings.each_with_index do |word, i|
       if word == strings2[i]
-        to_substitute[i] = (to_substitute[i] * 0)
+        to_substitute[i] = 0
       else
         if word.is_a?(String)
           num = 0
           word.split('').each_with_index do |char, j|
-            # puts strings2[i].split('')[j]
             if char != strings2[i].split('')[j]
               num += 1
             end
@@ -60,7 +57,6 @@ def substitutions_num(arr1, arr2)
         end
       end
     end
-    # puts to_substitute.inspect
     to_substitute.inject(:+)
   end
 end
