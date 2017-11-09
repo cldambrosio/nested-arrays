@@ -28,9 +28,9 @@ RSpec.describe do
       expect(substitutions_num(array7, array8)).to eq 8
     end
     it "multiplies 2 to the power of the depth of nesting" do
-      array9 = [ [[["drones"]]] ]
-      array10 = [ [[["drains"]]] ]
-      expect(substitutions_num(array9, array10)).to eq 24
+      array9 = [ [[["shiny"]]] ]
+      array10 = [ [[["dirty"]]] ]
+      expect(substitutions_num(array9, array10)).to eq 32
     end
     it "returns the sum of the number of necessary one character 
     substitutions multiplied by 2 to the power of the depth of nesting 
