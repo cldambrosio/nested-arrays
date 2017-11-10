@@ -24,9 +24,7 @@ def to_single_nest(arr)
 end
 
 def substitutions_num(arr1, arr2)
-  if find_depth(arr1) != find_depth(arr2)
-    return -1
-  elsif arr1.join.length != arr2.join.length
+  if (find_depth(arr1) != find_depth(arr2)) || (arr1.join.length != arr2.join.length)
     return -1
   elsif arr1.join == arr2.join
     return 0
