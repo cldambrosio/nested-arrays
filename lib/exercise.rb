@@ -36,8 +36,8 @@ def substitutions_num(arr1, arr2)
       if word == strings2[i]
         to_substitute[i] = 0
       else
+        num = 0
         if word.is_a?(String)
-          num = 0
           word.split('').each_with_index do |char, j|
             if char != strings2[i].split('')[j]
               num += 1
@@ -45,13 +45,12 @@ def substitutions_num(arr1, arr2)
           end
           to_substitute[i] = (to_substitute[i] * num)
         else word.is_a?(Array)
-          num2 = 0
           word.join.split('').each_with_index do |char, j|
             if char != strings2[i].join.split('')[j]
-              num2 += 1
+              num += 1
             end
           end
-          to_substitute[i] = (to_substitute[i] * num2)
+          to_substitute[i] = (to_substitute[i] * num)
         end
       end
     end
